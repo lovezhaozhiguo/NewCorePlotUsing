@@ -1,0 +1,45 @@
+//
+//  PrefixHeader.pch
+//  NewCorePlotUsing
+//
+//  Created by ZZG on 2016/11/29.
+//  Copyright © 2016年 htmitech.com. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import <TargetConditionals.h>
+
+#import <Accelerate/Accelerate.h>
+
+#if TARGET_OS_SIMULATOR || TARGET_OS_IPHONE || TARGET_OS_TV
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#else
+#import <Cocoa/Cocoa.h>
+
+#ifndef MAC_OS_X_VERSION_10_6
+#define MAC_OS_X_VERSION_10_6 1060
+#endif
+
+#ifndef MAC_OS_X_VERSION_10_7
+#define MAC_OS_X_VERSION_10_7 1070
+#endif
+
+#ifndef MAC_OS_X_VERSION_10_8
+#define MAC_OS_X_VERSION_10_8 1080
+#endif
+
+#endif
+
+
+
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
